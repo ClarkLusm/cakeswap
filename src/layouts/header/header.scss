@@ -1,0 +1,99 @@
+@import "../../styles/variables.module.scss";
+
+.header {
+  background-color: var(--colors-backgroundAlt);
+  border-bottom: 1px solid var(--colors-cardBorder);
+}
+
+.top-menu {
+  display: flex;
+  a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 16px;
+    color: $text-color;
+    &:hover {
+      background-color: $tertiary-color;
+    }
+    &.active {
+      a {
+        color: var(--colors-secondary);
+        font-weight: 600;
+      }
+    }
+  }
+  &-dropdown {
+    background-color: var(--colors-backgroundAlt);
+    border: 1px solid var(--colors-cardBorder);
+    border-radius: 16px;
+    width: 280px;
+    a {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      padding-left: 16px;
+      padding-right: 16px;
+      height: 48px;
+      &:hover {
+        background-color: $tertiary-color;
+      }
+      &.active {
+        a {
+          color: var(--colors-secondary);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.right-menu {
+  ul {
+    display: flex;
+    gap: 24px;
+    li {
+      > span {
+        cursor: pointer;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  ul {
+    gap: 16px;
+    background-color: var(--colors-backgroundAlt2);
+    box-shadow: rgba(133, 133, 133, 0.1) 0px -2px 0px;
+    li {
+      position: relative;
+      a {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        padding: 0 2px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        height: 4px;
+        width: 100%;
+        background-color: transparent;
+        border-radius: 2px 2px 0px 0px;
+      }
+      &.active {
+        &::after {
+          background-color: var(--colors-primary);
+        }
+        a {
+          color: var(--colors-secondary);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
