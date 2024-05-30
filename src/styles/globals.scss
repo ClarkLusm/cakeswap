@@ -34,7 +34,7 @@
   --colors-background: #08060b;
   --colors-backgroundDisabled: #3c3742;
   --colors-backgroundAlt: #27262c;
-  --colors-backgroundAlt2: rgba(39,38,44,.7);
+  --colors-backgroundAlt2: rgba(39, 38, 44, .7);
   --colors-cardBorder: #383241;
   --colors-contrast: #fff;
   --colors-dropdown: #1e1d20;
@@ -48,15 +48,15 @@
   --colors-textDisabled: #666171;
   --colors-textSubtle: #b8add2;
   --colors-disabled: #524b63;
-  --colors-gradientPrimary: linear-gradient(228.54deg,#1fc7d4 -13.69%,#9a6aff 91.33%);
-  --colors-gradientBubblegum: linear-gradient(139.73deg,#313d5c,#3d2a54);
-  --colors-gradientInverseBubblegum: linear-gradient(139.73deg,#3d2a54,#313d5c);
-  --colors-gradientCardHeader: linear-gradient(166.77deg,#3b4155,#3a3045);
-  --colors-gradientBlue: linear-gradient(180deg,#00707f,#19778c);
-  --colors-gradientViolet: linear-gradient(180deg,#6c4999,#6d4db2);
-  --colors-gradientVioletAlt: linear-gradient(180deg,#434575,#66578d);
-  --colors-gradientGold: linear-gradient(180deg,#ffd800,#fdab32);
-  --colors-gradientBold: linear-gradient(#53dee9,#9a6aff);
+  --colors-gradientPrimary: linear-gradient(228.54deg, #1fc7d4 -13.69%, #9a6aff 91.33%);
+  --colors-gradientBubblegum: linear-gradient(139.73deg, #313d5c, #3d2a54);
+  --colors-gradientInverseBubblegum: linear-gradient(139.73deg, #3d2a54, #313d5c);
+  --colors-gradientCardHeader: linear-gradient(166.77deg, #3b4155, #3a3045);
+  --colors-gradientBlue: linear-gradient(180deg, #00707f, #19778c);
+  --colors-gradientViolet: linear-gradient(180deg, #6c4999, #6d4db2);
+  --colors-gradientVioletAlt: linear-gradient(180deg, #434575, #66578d);
+  --colors-gradientGold: linear-gradient(180deg, #ffd800, #fdab32);
+  --colors-gradientBold: linear-gradient(#53dee9, #9a6aff);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -68,13 +68,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--colors-textSubtle);
+  background-color: var(--colors-background);
 }
 
 @layer utilities {
@@ -85,4 +80,42 @@ body {
 
 a {
   color: $text-color;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.text-primary {
+  color: var(--colors-primary);
+}
+
+.text-secondary {
+  color: var(--colors-secondary);
+}
+
+.btn-primary {
+  background-color: var(--colors-primary);
+  color: var(--colors-invertedContrast);
+  transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+
+  &.large {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 48px;
+  }
+
+  &:hover {
+    background-color: var(--colors-primaryDark);
+  }
 }

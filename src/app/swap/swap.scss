@@ -1,0 +1,32 @@
+.swap-page {
+    .form-wrap {
+        background-color: var(--colors-backgroundAlt);
+    }
+    .exchange {
+        &-btn {
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            background-color: var(--colors-input);
+            color: var(--colors-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+    }
+    .token-value {
+        border-radius: 10px;
+        background-color: var(--colors-input);
+        padding: 10px;
+        &_input {
+            outline: none;
+            background-color: unset;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: right;
+            color: var(--colors-text);
+        }
+    }
+}
