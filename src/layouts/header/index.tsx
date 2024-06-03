@@ -4,9 +4,12 @@ import { MdLanguage } from "react-icons/md";
 import { FaBell } from "react-icons/fa";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
+import { TokenSelect } from "@/components/token-select";
+import { ConnectWalletButton } from "@/components/connect-wallet-button";
+import { AccountBalance } from "@/components/account-balance";
+
 import { Logo } from "../logo";
 import "./header.scss";
-import { AccountBalance } from "../account-balance";
 
 export function Header() {
   return (
@@ -27,7 +30,9 @@ function TopMenu() {
   return (
     <div className="top-menu">
       <Menu>
-        <MenuButton as="a" className="active">Trade</MenuButton>
+        <MenuButton as="a" className="active">
+          Trade
+        </MenuButton>
         <MenuItems anchor="bottom" className="top-menu-dropdown">
           <MenuItem>
             <Link className="block data-[focus]:bg-blue-100" href="/swap">
@@ -35,7 +40,10 @@ function TopMenu() {
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link className="active block data-[focus]:bg-blue-100" href="/liquidity">
+            <Link
+              className="active block data-[focus]:bg-blue-100"
+              href="/liquidity"
+            >
               Liquidity
             </Link>
           </MenuItem>
@@ -99,7 +107,7 @@ function TopMenu() {
 function RightMenu() {
   return (
     <div className="right-menu">
-      <ul className="flex">
+      <ul className="flex mr-4">
         <li>
           <span>
             <MdLanguage fontSize={20} />
@@ -116,6 +124,8 @@ function RightMenu() {
           </span>
         </li>
       </ul>
+      <TokenSelect />
+      <ConnectWalletButton />
     </div>
   );
 }
