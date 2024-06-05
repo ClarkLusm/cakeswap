@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { TbMoneybag } from "react-icons/tb";
 import { FaChartBar } from "react-icons/fa";
@@ -9,13 +9,13 @@ import { IoArrowDown } from "react-icons/io5";
 import { LuRefreshCcw } from "react-icons/lu";
 import { MdEdit } from "react-icons/md";
 
+import { TokenSelect } from "@/components/token-select";
+import { BNBToken } from "@/constants/tokens";
+
 import "./swap.scss";
 
 export default function Page() {
-
-  const onSettings = (e: any) => {
-
-  }
+  const onSettings = (e: any) => {};
 
   return (
     <div className="swap-page flex justify-center p-8">
@@ -42,13 +42,16 @@ export default function Page() {
           </div>
         </div>
         <div className="from-token px-6 mb-4">
+          <TokenSelect activeToken={BNBToken} />
           <div className="token-value">
             <input
               type="text"
               placeholder="0.0"
               className="token-value_input"
             />
-            <div className="token-to-usd flex justify-end text-xs">123.23233</div>
+            <div className="token-to-usd flex justify-end text-xs">
+              123.23233
+            </div>
           </div>
         </div>
         <div className="exchange flex justify-center mb-4">
@@ -57,6 +60,7 @@ export default function Page() {
           </button>
         </div>
         <div className="to-token px-6 mb-4">
+          <TokenSelect activeToken={BNBToken} />
           <div className="token-value">
             <input
               type="text"
@@ -71,18 +75,24 @@ export default function Page() {
             <span className="flex">
               <span className="text-xs">1 CAKE = 316969278 tBNB</span>
               <button className="text-sm ml-1">
-              <LuRefreshCcw />
+                <LuRefreshCcw />
               </button>
             </span>
           </div>
           <div className="rate-detail flex justify-between mb-8">
             <div className="flex items-center">
-              <span className="text-xs text-bold text-secondary">Slippage Tolerance</span>
-              <button onClick={onSettings} className="ml-2 text-primary"><MdEdit /></button>
+              <span className="text-xs text-bold text-secondary">
+                Slippage Tolerance
+              </span>
+              <button onClick={onSettings} className="ml-2 text-primary">
+                <MdEdit />
+              </button>
             </div>
             <span className="font-bold text-primary text-sm">0.5%</span>
           </div>
-          <button className="btn btn-primary large w-full">Connect Wallet</button>
+          <button className="btn btn-primary large w-full">
+            Connect Wallet
+          </button>
         </div>
       </div>
     </div>

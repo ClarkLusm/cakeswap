@@ -1,11 +1,77 @@
-.token-select-btn {
-    height: 32px;
-    background-color: var(--colors-tertiary);
-    border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0px inset;
-    padding-left: 32px;
-    padding-right: 8px;
-    margin-right: 16px;
-    display: flex;
-    align-items: center;
+.token-select {
+    &-btn {
+        height: 32px;
+        background-color: var(--colors-tertiary);
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0px inset;
+        padding-left: 32px;
+        padding-right: 8px;
+        margin-right: 16px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    &-dialog {
+        min-width: 320px;
+        overflow: hidden;
+        background: var(--colors-backgroundAlt);
+        box-shadow: rgba(14, 14, 44, 0.1) 0px 20px 36px -8px, rgba(0, 0, 0, 0.05) 0px 1px 1px;
+        border: 1px solid var(--colors-cardBorder);
+        border-radius: 16px;
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--colors-cardBorder);
+            padding: 12px 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+
+            button {
+                color: var(--colors-primary);
+                font-size: 20px;
+            }
+        }
+
+    }
+    &-list {
+        padding-bottom: 24px;
+    }
+
+    &-item {
+        padding: 4px 20px;
+        height: 56px;
+        display: grid;
+        grid-template-columns: auto minmax(auto, 1fr) minmax(0px, 72px);
+        gap: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &_title {
+            display: flex;
+            flex-direction: column;
+            margin-left: 4px;
+        }
+    
+        &_symbol {
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+    
+        &_name {
+            font-size: 14px;
+        }
+
+        &_icon {
+            margin-left: auto;
+        }
+
+        &:hover {
+            background-color: var(--colors-background);
+        }
+    }
+
 }
