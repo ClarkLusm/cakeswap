@@ -30,3 +30,11 @@
         }
     }
 }
+
+.exchange-btn {
+    transition: all 300ms;
+    &:hover {
+        background-color: var(--colors-primary);
+        color: #FFFFFF
+    }
+}

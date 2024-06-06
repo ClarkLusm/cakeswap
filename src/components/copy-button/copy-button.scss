@@ -1,0 +1,16 @@
+.copy-button {
+    display: inline-flex;
+    position: relative;
+
+    &_tooltip {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #FFFFFF;
+        color: #333333;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        padding: 4px 8px;
+        text-wrap: nowrap;
+    }
+}

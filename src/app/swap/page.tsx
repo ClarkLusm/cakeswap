@@ -5,11 +5,12 @@ import { FaChartBar } from "react-icons/fa";
 import { MdOutlineHistory } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { IoMdRefresh } from "react-icons/io";
-import { IoArrowDown } from "react-icons/io5";
+import { MdOutlineSwapVert } from "react-icons/md";
 import { LuRefreshCcw } from "react-icons/lu";
 import { MdEdit } from "react-icons/md";
 
 import { TokenSelect } from "@/components/token-select";
+import { CopyButton } from "@/components/copy-button";
 import { BNBToken } from "@/constants/tokens";
 
 import "./swap.scss";
@@ -42,7 +43,7 @@ export default function Page() {
           </div>
         </div>
         <div className="from-token px-6 mb-4">
-          <TokenSelect activeToken={BNBToken} />
+          <TokenSelect activeToken={BNBToken} className="mb-2" />
           <div className="token-value">
             <input
               type="text"
@@ -56,11 +57,14 @@ export default function Page() {
         </div>
         <div className="exchange flex justify-center mb-4">
           <button className="exchange-btn">
-            <IoArrowDown />
+            <MdOutlineSwapVert />
           </button>
         </div>
         <div className="to-token px-6 mb-4">
-          <TokenSelect activeToken={BNBToken} />
+          <div className="flex items-center mb-2">
+            <TokenSelect activeToken={BNBToken} className="mr-2" />
+            <CopyButton value="" message="Token address copied" />
+          </div>
           <div className="token-value">
             <input
               type="text"
