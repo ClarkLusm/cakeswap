@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classnames from "classnames";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { IoCaretDown } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
@@ -11,16 +12,20 @@ import "./token-select.scss";
 
 type TokenSelectProps = {
   activeToken: TokenModel;
+  className?: string;
 };
 
 const tokenList: [TokenModel] = [BNBToken];
 
-export function TokenSelect({ activeToken }: TokenSelectProps) {
+export function TokenSelect({ activeToken, className }: TokenSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <button className="token-select-btn" onClick={() => setIsOpen(true)}>
+      <button
+        className={classnames("token-select-btn", className)}
+        onClick={() => setIsOpen(true)}
+      >
         {activeToken.symbol} <IoCaretDown />
       </button>
       <Dialog
@@ -33,7 +38,9 @@ export function TokenSelect({ activeToken }: TokenSelectProps) {
           <DialogPanel className="token-select-dialog max-w-lg space-y-4">
             <header>
               <span>Select a Token</span>
-              <button className="bg-transparent"><IoMdClose /></button>
+              <button className="bg-transparent">
+                <IoMdClose />
+              </button>
             </header>
             <div className="token-select-list">
               {tokenList.map((token) => (
