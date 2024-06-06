@@ -4,7 +4,7 @@ import { MdLanguage } from "react-icons/md";
 import { FaBell } from "react-icons/fa";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
-import { TokenSelect } from "@/components/token-select";
+import { NetworkSelect } from "@/components/network-select";
 import { ConnectWalletButton } from "@/components/connect-wallet-button";
 import { AccountBalance } from "@/components/account-balance";
 
@@ -124,7 +124,7 @@ function RightMenu() {
           </span>
         </li>
       </ul>
-      <TokenSelect />
+      <NetworkSelect />
       <ConnectWalletButton />
     </div>
   );

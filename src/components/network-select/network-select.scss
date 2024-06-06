@@ -1,0 +1,51 @@
+.network-select {
+    &-btn {
+        height: 32px;
+        background-color: var(--colors-tertiary);
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0px inset;
+        padding-left: 32px;
+        padding-right: 8px;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    &-dropdown {
+        background-color: var(--colors-backgroundAlt);
+        border: 1px solid var(--colors-cardBorder);
+        border-radius: 16px;
+        width: 280px;
+
+        span {
+            display: flex;
+            align-items: center;
+            color: var(--colors-text);
+            padding-left: 16px;
+            padding-right: 16px;
+            height: 48px;
+            cursor: pointer;
+
+            &:first-child {
+                cursor: default;
+                color: var(--colors-textSubtle);
+                &:hover {
+                    background: unset;
+                }
+            }
+
+            &:hover {
+                background-color: var(--colors-tertiary);
+            }
+
+            &.active {
+                color: var(--colors-secondary);
+                font-weight: 600;
+            }
+        }
+
+        hr {
+            border-color: var(--colors-cardBorder);
+        }
+    }
+}
